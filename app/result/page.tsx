@@ -11,8 +11,10 @@ export default function ResultPage() {
   const [score, setScore] = useState<number | null>(null);
 
   useEffect(() => {
+    const initial = localStorage.getItem("initialAnswer") as "yes" | "no" | null;
     const stored = localStorage.getItem("answers");
-    if (!stored) {
+
+    if (!initial || !stored) {
       setScore(null);
       return;
     }
@@ -20,15 +22,13 @@ export default function ResultPage() {
     const answers: Answer[] = JSON.parse(stored);
     const total = answers.length;
 
-    // Najdeme první odpověď jako výchozí názor
-    const base = answers[0]?.answer;
-    const consistent = answers.filter((a) => a.answer === base).length;
-
+    const consistent = answers.filter((a) => a.answer === initial).length;
     const result = Math.round((consistent / total) * 100);
     setScore(result);
 
-    // (Nepovinné) Vyčištění localStorage po zobrazení výsledku
+    // Nepovinné: Vyčištění
     // localStorage.removeItem("answers");
+    // localStorage.removeItem("initialAnswer");
   }, []);
 
   return (
@@ -38,7 +38,8 @@ export default function ResultPage() {
       {score !== null ? (
         <>
           <p className="text-lg mb-4">
-            Vaše odpovědi byly konzistentní s vaším výchozím postojem z <strong>{score}%</strong>.
+            Vaše odpovědi byly konzistentní s vaším výchozím postojem z{" "}
+            <strong className="text-blue-600 text-2xl">{score}%</strong>.
           </p>
           <p className="max-w-xl text-sm text-gray-600">
             Pokud jste někde odpověděli jinak, než odpovídá vaší první odpovědi, ukazuje to,
@@ -46,7 +47,7 @@ export default function ResultPage() {
           </p>
         </>
       ) : (
-        <p>Odpovědi nebyly nalezeny.</p>
+        <p className="text-red-600">Odpovědi nebyly nalezeny.</p>
       )}
     </main>
   );
