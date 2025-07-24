@@ -4,6 +4,7 @@ import { useRouter, useParams } from "next/navigation";
 import { useEffect } from "react";
 import { questions } from "../../../lib/questions";
 import QuestionCard from "../../../components/QuestionCard";
+import ProgressBar from "../../../components/ProgressBar";
 
 export default function QuestionPage() {
   const router = useRouter();
@@ -13,7 +14,7 @@ export default function QuestionPage() {
   const question = questions.find((q) => q.id === id);
 
   useEffect(() => {
-    // Pokud někdo navštíví přímo /question bez odpovědi na start, smažeme předchozí odpovědi
+    // Při první otázce smažeme staré odpovědi
     if (id === 1) {
       localStorage.removeItem("answers");
     }
@@ -28,17 +29,12 @@ export default function QuestionPage() {
   }
 
   function handleAnswer(answer: "yes" | "no") {
-    // Načtení předchozích odpovědí z localStorage
     const existing = localStorage.getItem("answers");
     const parsed = existing ? JSON.parse(existing) : [];
 
-    // Přidání aktuální odpovědi
     const updated = [...parsed, { id, answer }];
-
-    // Uložení zpět
     localStorage.setItem("answers", JSON.stringify(updated));
 
-    // Navigace na další otázku nebo výsledek
     const nextQuestion = questions.find((q) => q.id === id + 1);
     if (nextQuestion) {
       router.push(`/question/${nextQuestion.id}`);
@@ -48,7 +44,8 @@ export default function QuestionPage() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4">
+    <main className="flex flex-col items-center justify-center min-h-screen px-4 w-full">
+      <ProgressBar current={id} total={questions.length} />
       <QuestionCard text={question.text} onAnswer={handleAnswer} />
     </main>
   );
