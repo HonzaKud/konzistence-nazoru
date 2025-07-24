@@ -7,18 +7,18 @@ type Props = {
 
 export default function QuestionCard({ text, onAnswer }: Props) {
   return (
-    <div className="text-center">
-      <p className="text-xl font-medium mb-6">{text}</p>
-      <div className="flex justify-center gap-6">
+    <div className="text-center bg-white bg-opacity-80 backdrop-blur-md p-10 rounded-2xl shadow-xl">
+      <p className="text-2xl font-semibold mb-10">{text}</p>
+      <div className="flex justify-center gap-8">
         <button
           onClick={() => onAnswer("yes")}
-          className="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition"
+          className="px-8 py-3 rounded-full text-white font-bold text-lg bg-green-500 hover:bg-green-600 transition duration-300 shadow-md"
         >
           Ano
         </button>
         <button
           onClick={() => onAnswer("no")}
-          className="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition"
+          className="px-8 py-3 rounded-full text-white font-bold text-lg bg-red-500 hover:bg-red-600 transition duration-300 shadow-md"
         >
           Ne
         </button>

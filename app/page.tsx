@@ -1,4 +1,6 @@
 // app/page.tsx
+"use client";
+
 import Link from "next/link";
 
 export default function HomePage() {
@@ -17,7 +19,7 @@ export default function HomePage() {
       </p>
 
       <Link href="/start">
-        <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">
+        <button className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition duration-300 shadow-md">
           Začít
         </button>
       </Link>

@@ -1,9 +1,13 @@
-/* app/globals.css */
+/* styles/globals.css */
+
+/* Import fontu MUSÍ být úplně na začátku */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom font or overrides */
+/* Vlastní styly */
 body {
-  font-family: system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
