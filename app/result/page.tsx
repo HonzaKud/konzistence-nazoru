@@ -32,7 +32,7 @@ export default function ResultPage() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4 text-center">
+    <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 text-center">
       <h2 className="text-2xl font-bold mb-6">Výsledek</h2>
 
       {score !== null ? (

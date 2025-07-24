@@ -14,7 +14,6 @@ export default function QuestionPage() {
   const question = questions.find((q) => q.id === id);
 
   useEffect(() => {
-    // Při první otázce smažeme staré odpovědi
     if (id === 1) {
       localStorage.removeItem("answers");
     }
@@ -31,8 +30,8 @@ export default function QuestionPage() {
   function handleAnswer(answer: "yes" | "no") {
     const existing = localStorage.getItem("answers");
     const parsed = existing ? JSON.parse(existing) : [];
-
     const updated = [...parsed, { id, answer }];
+
     localStorage.setItem("answers", JSON.stringify(updated));
 
     const nextQuestion = questions.find((q) => q.id === id + 1);
@@ -44,7 +43,7 @@ export default function QuestionPage() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4 w-full">
+    <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 w-full text-center">
       <ProgressBar current={id} total={questions.length} />
       <QuestionCard text={question.text} onAnswer={handleAnswer} />
     </main>
