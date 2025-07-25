@@ -10,7 +10,7 @@ export default function HomePage() {
       <p className="max-w-xl text-lg mb-8 text-gray-700">
         Tahle stránka není test. Nenabízí správné nebo špatné odpovědi. Jejím cílem je ukázat, jak konzistentní je náš názor, když ho aplikujeme na různé konkrétní situace.
         <br /><br />
-        Vybereme jedno téma. Položíme vám jednoduchou úvodní otázku. A pak dvacet dalších, které budou čím dál složitější.
+        Vybereme jedno téma. Položíme vám jednoduchou úvodní otázku. A pak deset dalších, které budou čím dál složitější.
         <br /><br />
         Vaše odpovědi se nikam neukládají. Nikdo je neuvidí. Můžete si test udělat opakovaně a zkusit si projít cestu znovu.
         <br /><br />
