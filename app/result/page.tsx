@@ -10,7 +10,6 @@ type Answer = {
 
 export default function ResultPage() {
   const [initial, setInitial] = useState<"yes" | "no" | null>(null);
-  const [answers, setAnswers] = useState<Answer[]>([]);
   const [analysis, setAnalysis] = useState<string>("");
   const router = useRouter();
 
@@ -22,7 +21,6 @@ export default function ResultPage() {
 
     const parsed: Answer[] = JSON.parse(stored);
     setInitial(initialAnswer);
-    setAnswers(parsed);
 
     const total = parsed.length;
     const yesCount = parsed.filter((a) => a.answer === "yes").length;
