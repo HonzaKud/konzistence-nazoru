@@ -1,27 +1,17 @@
-export type Question = {
+export type Question = { 
   id: number;
   text: string;
 };
 
 export const questions: Question[] = [
-  { id: 1, text: "Měli by homosexuální páry mít možnost uzavřít manželství?" },
-  { id: 2, text: "Měli by mít stejné daňové výhody jako manželé?" },
-  { id: 3, text: "Měli by mít homosexuální partneři právo na informace v nemocnici o zdravotním stavu druhého?" },
-  { id: 4, text: "Měli by mít právo na společný majetek a dědictví stejně jako manželé?" },
-  { id: 5, text: "Měl by stát právně uznat partnerské svazky stejným způsobem jako manželství?" },
-  { id: 6, text: "Měli by mít právo osvojit si dítě stejně jako heterosexuální páry?" },
-  { id: 7, text: "Měli by mít právo adoptovat dítě z dětského domova?" },
-  { id: 8, text: "Měli by mít nárok na stejnou podporu při umělém oplodnění jako heterosexuální páry?" },
-  { id: 9, text: "Měly by být homosexuální páry součástí školních výukových materiálů o rodině?" },
-  { id: 10, text: "Měly by mít homosexuální páry možnost být pěstouny?" },
-  { id: 11, text: "Měly by mít stejný nárok na sociální dávky jako manželé?" },
-  { id: 12, text: "Měli by mít právo být spolu v domovech pro seniory jako pár?" },
-  { id: 13, text: "Měl by stát finančně podporovat kampaně na podporu rovnosti LGBT osob?" },
-  { id: 14, text: "Měli by mít možnost uzavírat manželství i v církvi (pokud daná církev souhlasí)?" },
-  { id: 15, text: "Měly by být homosexuální páry chráněny zákonem proti diskriminaci stejně jako heterosexuální?" },
-  { id: 16, text: "Měli by mít právo společně čerpat rodičovskou dovolenou?" },
-  { id: 17, text: "Měli by mít stejný přístup ke společnému pojištění?" },
-  { id: 18, text: "Měl by být trestně postižitelný zaměstnavatel, který diskriminuje homosexuální páry?" },
-  { id: 19, text: "Měli by mít homosexuální partneři přístup ke společnému bydlení ve státních bytech?" },
-  { id: 20, text: "Měli by mít právo být uvedeni jako pár ve všech státních dokumentech?" },
+  { id: 1, text: "Je v pořádku, když se dva lidé stejného pohlaví na veřejnosti drží za ruce?" },
+  { id: 2, text: "Měli by mít homosexuální páry možnost uzavřít manželství?" },
+  { id: 3, text: "Měli by mít homosexuální páry stejné daňové úlevy jako heterosexuální manželé?" },
+  { id: 4, text: "Měla by být tzv. konverzní terapie (pokusy měnit sexuální orientaci) zakázána zákonem?" },
+  { id: 5, text: "Měla by být homosexualita ve školách představována jako jedna z běžných variant sexuální orientace?" },
+  { id: 6, text: "Může otevřené přiznání vlastní orientace (coming out) pozitivně ovlivnit společnost?" },
+  { id: 7, text: "Měly by být rodiny tvořené homosexuálními páry běžně zobrazovány i v reklamách a pohádkách?" },
+  { id: 8, text: "Mělo by být legálně umožněno, aby homosexuální pár využil náhradní matku?" },
+  { id: 9, text: "Měli by mít homosexuální páry právo adoptovat děti?" },
+  { id: 10, text: "Pokud o adopci jednoho dítěte usiluje homosexuální a heterosexuální pár se srovnatelnými podmínkami, měly by mít oba páry stejnou šanci bez automatické přednosti jednoho z nich?" }
 ];
