@@ -13,22 +13,20 @@ export default function QuestionPage() {
   const topicId = params.topicId;
   const questionId = parseInt(params.id, 10);
 
-  // Najdeme téma
+  // Najdeme téma a otázku
   const topic = topics.find((t) => t.id === topicId);
+  const question = topic?.questions.find((q) => q.id === questionId);
 
-  if (!topic) {
-    return <div className="p-6 text-center text-red-600">Téma nenalezeno.</div>;
-  }
-
-  // Najdeme otázku
-  const question = topic.questions.find((q) => q.id === questionId);
-
+  // Hook musí být volán vždy, podmínka je uvnitř
   useEffect(() => {
-    // Smažeme staré odpovědi, pokud začínáme nově
     if (questionId === 1) {
       localStorage.removeItem("answers");
     }
   }, [questionId]);
+
+  if (!topic) {
+    return <div className="p-6 text-center text-red-600">Téma nenalezeno.</div>;
+  }
 
   if (!question) {
     return <div className="p-6 text-center text-red-600">Otázka nenalezena.</div>;
@@ -40,8 +38,8 @@ export default function QuestionPage() {
     const updated = [...parsed, { id: questionId, answer }];
     localStorage.setItem("answers", JSON.stringify(updated));
 
-    // Používáme topic! pro jistotu, že není undefined
     const nextQuestion = topic!.questions.find((q) => q.id === questionId + 1);
+
 
     if (nextQuestion) {
       router.push(`/${topicId}/question/${nextQuestion.id}`);
@@ -52,7 +50,7 @@ export default function QuestionPage() {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] px-4 w-full">
-      <ProgressBar current={questionId} total={topic!.questions.length} />
+      <ProgressBar current={questionId} total={topic.questions.length} />
       <QuestionCard text={question.text} onAnswer={handleAnswer} />
     </main>
   );
