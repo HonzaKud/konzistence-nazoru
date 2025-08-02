@@ -11,14 +11,15 @@ export default function HomePage() {
         Tahle stránka není test. Nenabízí správné nebo špatné odpovědi. Jejím cílem je ukázat,
         jak konzistentní je náš názor, když ho aplikujeme na různé konkrétní situace.
         <br /><br />
-        Vyberte si téma, odpovězte na úvodní otázku a pak na deset dalších, které jsou postupně složitější.
+        Vyberte si téma, odpovězte na úvodní otázku a pak na deset dalších, které jsou čím dál složitější.
         <br /><br />
-        Vaše odpovědi se nikam neukládají a můžete si test kdykoli zopakovat.
+        Vaše odpovědi se nikam neukládají. Nikdo je neuvidí. Můžete si test udělat opakovaně a zkusit si projít cestu znovu.
+        <br /><br />
+        Témata, kterým se věnujeme, bývají složitá. Cílem není rozhodnout, kdo má pravdu. Cílem je přemýšlet – porozumět lépe sobě, a možná i trochu lépe lidem kolem nás.
       </p>
-
       <Link href="/topics">
         <button className="bg-teal-600 text-white px-6 py-3 rounded-full hover:bg-teal-700 transition duration-300 shadow-md">
-          Vybrat téma
+          Začít
         </button>
       </Link>
     </main>
