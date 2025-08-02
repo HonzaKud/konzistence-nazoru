@@ -8,18 +8,17 @@ export default function HomePage() {
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Co když to není černobílé?</h1>
 
       <p className="max-w-xl text-lg mb-8 text-gray-700">
-        Tahle stránka není test. Nenabízí správné nebo špatné odpovědi. Jejím cílem je ukázat, jak konzistentní je náš názor, když ho aplikujeme na různé konkrétní situace.
+        Tahle stránka není test. Nenabízí správné nebo špatné odpovědi. Jejím cílem je ukázat,
+        jak konzistentní je náš názor, když ho aplikujeme na různé konkrétní situace.
         <br /><br />
-        Vybereme jedno téma. Položíme vám jednoduchou úvodní otázku. A pak deset dalších, které budou čím dál složitější.
+        Vyberte si téma, odpovězte na úvodní otázku a pak na deset dalších, které jsou postupně složitější.
         <br /><br />
-        Vaše odpovědi se nikam neukládají. Nikdo je neuvidí. Můžete si test udělat opakovaně a zkusit si projít cestu znovu.
-        <br /><br />
-        Témata, kterým se věnujeme, bývají složitá. Cílem není rozhodnout, kdo má pravdu. Cílem je přemýšlet – porozumět lépe sobě, a možná i trochu lépe lidem kolem nás.
+        Vaše odpovědi se nikam neukládají a můžete si test kdykoli zopakovat.
       </p>
 
-      <Link href="/start">
+      <Link href="/topics">
         <button className="bg-teal-600 text-white px-6 py-3 rounded-full hover:bg-teal-700 transition duration-300 shadow-md">
-          Začít
+          Vybrat téma
         </button>
       </Link>
     </main>
